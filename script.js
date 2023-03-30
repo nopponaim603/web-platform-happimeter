@@ -8,6 +8,8 @@ form.addEventListener('submit', (e) => {
     .then((response) => response.json())
     .then((html) => {
       // you can put any JS code here
-      alert('success');
+      //alert('success');
+      // Refresh the page after submitting the form
+      location.reload();
     });
 });
