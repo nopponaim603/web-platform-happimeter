@@ -15,6 +15,13 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
     <script type="module" src="script.js"></script>
+    <script>
+      function updateDateTime() {
+        var now = new Date();
+        var datetime = now.toLocaleString();
+        document.getElementById('datetime').innerHTML = datetime;
+      }
+    </script>
   </head>
   <body>
     <div class="container">
@@ -24,6 +31,14 @@
         method="POST"
         id="sheetdb-form"
       >
+        <p>
+          The current date and time is:
+          <span
+            id="datetime"
+            name="data[timestamp]"
+            value="2022-04-01T08:00:00"
+          ></span>
+        </p>
         <div class="form-group">
           <label class="radio-inline">
             <input
@@ -42,7 +57,13 @@
             <input type="radio" name="data[feedback]" value="poor" />Poor
           </label>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-default"
+          onclick="updateDateTime()"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </body>
